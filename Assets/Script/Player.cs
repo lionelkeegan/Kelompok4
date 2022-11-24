@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] GameObject gamePausePanel;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Animator animator;
     [SerializeField, Range(0,20)] float speed;
@@ -27,6 +28,10 @@ public class Player : MonoBehaviour
         {
             movDirection += new Vector2(0,-1);
         }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Pause();
+        }
 
         this.transform.Translate(movDirection*Time.deltaTime*speed);
 
@@ -38,7 +43,18 @@ public class Player : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
-
         animator.SetBool("IsMoving", movDirection != Vector2.zero);
+    }
+
+    void Pause()
+    {
+        Time.timeScale = 0;
+        gamePausePanel.SetActive(true);
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        gamePausePanel.SetActive(false);
     }
 }

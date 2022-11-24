@@ -34,7 +34,6 @@ public class CharacterSelect : MonoBehaviour
         }
 
         avatarImage.sprite = avatarSprites[selectedIndex];
-
         // SaveSelectedIndex();
     }
 
