@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using Cinemachine;
+using System;
 
 public class CharacterSelect : MonoBehaviour
 {
-    [SerializeField] Image avatarImage;
-    [SerializeField] Sprite[] avatarSprites;
+    [SerializeField] Image avatarCharacter;
+    [SerializeField] Sprite[] character;
     [SerializeField] TMP_InputField usernameInput;
-    [SerializeField] string nama;
-    private int selectedIndex = 0;
-    string username;
+    public static int selectedIndex = 0;
+    public static string username;
+
     private void Start()
     {
-        avatarImage.sprite = avatarSprites[selectedIndex];
-        // SaveSelectedIndex();
+        avatarCharacter.sprite = character[selectedIndex];
     }
 
     // shifting index milih ke kiri atau kanan dari Sprite[]
@@ -23,18 +23,16 @@ public class CharacterSelect : MonoBehaviour
     {
         selectedIndex += shift;
 
-        while (selectedIndex >= avatarSprites.Length)
+        while (selectedIndex >= character.Length)
         {
-            selectedIndex -= avatarSprites.Length;
+            selectedIndex -= character.Length;
         }
 
         while (selectedIndex < 0)
         {
-            selectedIndex += avatarSprites.Length;
+            selectedIndex += character.Length;
         }
-
-        avatarImage.sprite = avatarSprites[selectedIndex];
-        // SaveSelectedIndex();
+        avatarCharacter.sprite = character[selectedIndex];
     }
 
     public void SaveSelectedIndex()
@@ -42,6 +40,6 @@ public class CharacterSelect : MonoBehaviour
         //simpan di local storage
         username = usernameInput.text;
         PlayerPrefs.SetInt(username, selectedIndex);
-        Debug.Log("Name: " + username + ", avatar: " + PlayerPrefs.GetInt(username));
+        SceneManager.LoadScene("MapGame");
     }
 }
