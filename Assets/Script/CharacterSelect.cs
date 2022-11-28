@@ -12,6 +12,7 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] TMP_InputField usernameInput;
     public static int selectedIndex = 0;
     public static string username;
+    public static Sprite avatar;
 
     private void Start()
     {
@@ -38,6 +39,7 @@ public class CharacterSelect : MonoBehaviour
     public void SaveSelectedIndex()
     {
         //simpan di local storage
+        avatar = character[selectedIndex];
         username = usernameInput.text;
         PlayerPrefs.SetInt(username, selectedIndex);
         SceneManager.LoadScene("MapGame");

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,11 +10,6 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     GameObject panelPause;
-
-    // private void Start()
-    // {
-    //     panelPause.SetActive(false);
-    // }
 
     private void Awake()
     {
@@ -40,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
         {
             movDirection += new Vector2(0,-1);
         }
-
 
         this.transform.Translate(movDirection * Time.deltaTime * speed);
 
