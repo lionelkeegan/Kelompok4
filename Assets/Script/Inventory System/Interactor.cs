@@ -18,6 +18,7 @@ public class Interactor : MonoBehaviour
         {
             focusedInteractable.Focused(this);
             focusedInteractable.Act(this);
+            
         }
     }
 

@@ -20,6 +20,7 @@ public class Inventory : ScriptableObject
 
     }
 
+
     public void Remove(Item item)
     {
         if (items.Contains(item))
