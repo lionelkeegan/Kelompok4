@@ -6,6 +6,7 @@ public class InventoryUI : MonoBehaviour
 {
     [SerializeField] Inventory inventory;
     [SerializeField] GameObject slotPrefab;
+    [SerializeField] ItemContextMenu itemContextMenu;
     [SerializeField] int numOfSlots = 5;
 
     List<RectTransform> slots = new List<RectTransform>();
@@ -42,9 +43,13 @@ public class InventoryUI : MonoBehaviour
         {
             if(emptySlots != 0)
             {
+                // parent dan posisi
                 item.gameObject.SetActive(true);
-                item.Image.transform.SetParent(slots[numOfSlots - emptySlots]);
-                item.Image.transform.localPosition = Vector3.zero;
+                item.transform.SetParent(GetComponentInParent<Canvas>().transform);
+                item.transform.position = slots[numOfSlots - emptySlots].position;
+                
+                // daftarkan menu
+                item.UiItem.AddContextMenu(itemContextMenu);
                 emptySlots -= 1;
             }
             else

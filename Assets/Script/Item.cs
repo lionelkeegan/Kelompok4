@@ -11,12 +11,16 @@ public class Item : MonoBehaviour, IInteractable
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Image image;
     [SerializeField] bool isInInventory;
+    [SerializeField] UiItem uiItem;
+
+    Inventory inventory;
 
 
 
     public bool IsInInventory
     {
-        get => isInInventory; set
+        get => isInInventory; 
+        set
         {
             isInInventory = value;
             worldObject.SetActive(!isInInventory);
@@ -25,6 +29,7 @@ public class Item : MonoBehaviour, IInteractable
     }
 
     public Image Image { get => image; }
+    public UiItem UiItem { get => uiItem; }
 
     public void Awake(){
         IsInInventory = isInInventory;
@@ -33,7 +38,8 @@ public class Item : MonoBehaviour, IInteractable
     public void Act(Interactor interactor)
     {
         var InventoryComponent = interactor.GetComponent<InventoryComponent>();
-        InventoryComponent.Inventory.Add(this);
+        inventory = InventoryComponent.Inventory;
+        inventory.Add(this);
         IsInInventory = true;
     }
 
@@ -46,5 +52,20 @@ public class Item : MonoBehaviour, IInteractable
     {
         spriteRenderer.DOKill();
         spriteRenderer.color = Color.white;
+    }
+
+    public void Use(){
+        inventory.Remove(this);
+        Destroy(this.gameObject);
+    }
+
+    public void Drop()
+    {
+        this.transform.SetParent(null);
+        inventory.Remove(this);
+        IsInInventory = false;   
+        var pos = this.transform.position = Camera.main.ViewportToWorldPoint(new Vector2(0.5f, 0.5f));
+        pos.z = 0;
+        this.transform.position = pos;
     }
 }
