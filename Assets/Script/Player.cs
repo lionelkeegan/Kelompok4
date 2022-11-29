@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField, Range(0,20)] float speed;
 
 
+
     void Update()
     {
         Vector2 movDirection = Vector2.zero;

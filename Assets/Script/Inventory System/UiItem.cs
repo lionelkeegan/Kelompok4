@@ -35,12 +35,12 @@ public class UiItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        item.transform.DOScale(Vector3.one*1.9f, 0.3f);
+        item.transform.DOScale(Vector3.one*1.4f, 0.3f);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        item.transform.DOScale(Vector3.one*1.7f, 0.3f);
+        item.transform.DOScale(Vector3.one*1.2f, 0.3f);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -48,7 +48,7 @@ public class UiItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
         isDrag = true;
         canvasGroup.blocksRaycasts = false;
         originalPos = item.transform.position;
-        item.transform.DOScale(Vector3.one*1.9f, 0.3f);
+        item.transform.DOScale(Vector3.one*1.4f, 0.3f);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -56,7 +56,7 @@ public class UiItem : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
         Debug.Log("EndDrag");
         isDrag = false;
         canvasGroup.blocksRaycasts = true;
-        item.transform.DOScale(Vector3.one*1.7f, 0.3f);
+        item.transform.DOScale(Vector3.one*1.2f, 0.3f);
         
         if(isDrop == false)
             item.transform.position = originalPos;
