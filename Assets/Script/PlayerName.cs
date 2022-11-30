@@ -32,5 +32,4 @@ public class PlayerName : MonoBehaviour
 
         SceneManager.LoadSceneAsync("MapGame");
     }
-
 }

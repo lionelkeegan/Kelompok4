@@ -23,5 +23,4 @@ public class HealthBar : MonoBehaviour
             image.DOColor(Color.red,0.5f);
         }
     }
-
 }
