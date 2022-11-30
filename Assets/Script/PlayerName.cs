@@ -30,6 +30,6 @@ public class PlayerName : MonoBehaviour
     {
         NamePlayer = inputField.text;
 
-        SceneManager.LoadSceneAsync("MapGame");
+        SceneManager.LoadSceneAsync("MapGame1");
     }
 }
