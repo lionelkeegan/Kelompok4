@@ -18,6 +18,7 @@ public class Answer : MonoBehaviour
         {
             player.ChangeHealth(5);
             playerEnemy.ChangeHealth(-100);
+            DialogPanel.SetActive(true);
         }
         else
         {
