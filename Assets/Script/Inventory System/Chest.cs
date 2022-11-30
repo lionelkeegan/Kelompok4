@@ -5,16 +5,33 @@ using DG.Tweening;
 
 public class Chest : MonoBehaviour, IInteractable
 {
-    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
-    [SerializeField] Sprite openedSprite;
-    [SerializeField] Sprite closedSprite;
+    [SerializeField] private Sprite openedSprite;
+    [SerializeField] private Sprite closedSprite;
 
+    [SerializeField] private CanvasGroup canvasGroup;
+
+    private List<Item> items = new List<Item>();
+    
     bool isOpen;
     public void Act(Interactor interactor)
     {
         isOpen = !isOpen;
         spriteRenderer.sprite = isOpen? openedSprite : closedSprite;
+
+        if (isOpen)
+        {
+            isOpen = true;
+            canvasGroup.alpha = 1;
+            canvasGroup.blocksRaycasts = true;
+        }
+        else
+        {
+            isOpen = false;
+            canvasGroup.blocksRaycasts = false;
+            canvasGroup.alpha = 0;
+        }
     }
 
     public void Focused(Interactor interactor)
@@ -27,4 +44,6 @@ public class Chest : MonoBehaviour, IInteractable
         spriteRenderer.DOKill();
         spriteRenderer.color = Color.white;
     }
+
+    
 }
