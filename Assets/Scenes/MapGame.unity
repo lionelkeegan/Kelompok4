@@ -72618,7 +72618,7 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 68452751f1d19364c8d3165ba4502ca1, type: 2}
   slotPrefab: {fileID: 6903521053782553667, guid: 9bd1cde43976f2c4f80e8b6c522e46a8,
     type: 3}
-  itemContextMenu: {fileID: 1342499847}
+  itemContextMenu: {fileID: 0}
   numOfSlots: 9
 --- !u!1 &1415584341
 GameObject:
