@@ -4,15 +4,5 @@ using UnityEngine;
 
 public class PlayerManagement : MonoBehaviour
 {
-    GameObject panelPause;
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
+    
 }

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MapGame.unity
     guid: 3fc8d783caeb4f5409ac4e1c5fe9df59
+  - enabled: 1
+    path: Assets/Scenes/Tawanan1BentengDuurstede.unity
+    guid: 7f13efe218cb6af43a24e53c008c6eb1
   m_configObjects: {}
