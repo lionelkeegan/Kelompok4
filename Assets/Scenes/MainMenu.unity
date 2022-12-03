@@ -16931,8 +16931,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatarCharacter: {fileID: 1202489737}
   character:
-  - {fileID: 1343899057, guid: ca2331cded461024b833574990a52f0d, type: 3}
-  - {fileID: 21300000, guid: 029eff01e218fc548bf0a8863238df9a, type: 3}
+  - {fileID: 746954266, guid: b7b22cbe484073b48a123faa4b972dc8, type: 3}
+  - {fileID: -38103935, guid: e4bc8476a152ea44bbf1c0407f7d51aa, type: 3}
   - {fileID: 1324261119, guid: 62f8ad3dd200b03439d09f4589242a13, type: 3}
   usernameInput: {fileID: 796812004}
 --- !u!114 &1823545670

@@ -34,34 +34,19 @@ public class Animate : MonoBehaviour
     }
 
     public void HeroAttack(){
-        animationTweener = PosHero
-            .DOMove(HeroAtkPos.position, 0.5f)
-            .SetLoops(2, LoopType.Yoyo)
-            .SetDelay(0.2f);
-        animateHero.SetInteger("Animate", 1);
+        animateHero.Play("PlayerAtk");
     }
 
     public void HeroDamage(){
-        animationTweener = PosHero
-            .DOMove(HeroDmgPos.position, 0.5f)
-            .SetLoops(2, LoopType.Yoyo)
-            .SetDelay(0.2f);
-        animateHero.SetInteger("Animate", 0);
+        animateHero.Play("Dead");
     }
 
     public void EnemyAttack(){
-        animationTweener = PosEnemy
-            .DOMove(EnemyAtkPos.position, 0.5f)
-            .SetLoops(2, LoopType.Yoyo)
-            .SetDelay(0.2f);
+        animateEnemy.Play("Attack");
     }
 
     public void EnemyDamage(){
-        animationTweener = PosEnemy
-            .DOMove(EnemyDmgPos.position, 0.5f)
-            .SetLoops(2, LoopType.Yoyo)
-            .SetDelay(0.2f);
-        animateEnemy.SetInteger("Animate", 1);
+        animateEnemy.Play("Dead");
     }
 
     public void ChangeHealthEnemy(float amount)

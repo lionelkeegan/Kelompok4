@@ -37,10 +37,10 @@ public class Answer : MonoBehaviour
         // DialogPanel.SetActive(true);
         // var winner = GetWinner();
     }
-
+    
     IEnumerator MovePanel()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         DialogPanel.SetActive(true);
     }
 

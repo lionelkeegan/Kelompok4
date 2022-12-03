@@ -8,6 +8,7 @@ public class SceneTransition : MonoBehaviour
     public GameObject WarningPanel;
     public GameObject CanvasPlayer;
     GameObject player;
+    Resize playerResize;
 
     private void Awake()
     {
@@ -34,7 +35,7 @@ public class SceneTransition : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
         GameObject.DontDestroyOnLoad(CanvasPlayer);
-        player.transform.position = new Vector3(-4.5f, -0.5f, 0);
+        player.transform.position = new Vector3(-4.5f, 0.95f, 0);
         GameObject.DontDestroyOnLoad(player);
     }
 }

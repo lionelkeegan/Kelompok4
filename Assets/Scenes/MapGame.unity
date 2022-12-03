@@ -64580,7 +64580,7 @@ MonoBehaviour:
   Vcam: {fileID: 2103457760}
   PlayerPrefabs:
   - {fileID: 5741837908460021310, guid: 3ecd1f665eea84b4a9b76685f57ff67d, type: 3}
-  - {fileID: 9210738157239481236, guid: f18292ae18a72794db2f4aca1713d260, type: 3}
+  - {fileID: 9210738157239481236, guid: b7dc3258e1e0e594790e16f1082af55e, type: 3}
   - {fileID: 9210738157239481236, guid: 58a0bbd2dae74cb43aff0c7d962dd631, type: 3}
 --- !u!4 &627707120
 Transform:
@@ -76598,6 +76598,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1343391769}
+        m_TargetAssemblyTypeName: Resize, Assembly-CSharp
+        m_MethodName: ChangeBigScale
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1873068611474135282}
         m_TargetAssemblyTypeName: SceneTransition, Assembly-CSharp
         m_MethodName: LoadToScene
@@ -78592,6 +78604,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5147491850704913127, guid: 24506b828dc51e34986683b1109ffdbe, type: 3}
   m_PrefabInstance: {fileID: 1278403500}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1343391768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1343391770}
+  - component: {fileID: 1343391769}
+  m_Layer: 0
+  m_Name: PlayerResize
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1343391769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343391768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9433f9d1cd889674eaecee924c5e7177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1343391770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343391768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5624717, y: 0.027425885, z: -0.02571126}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1343910443
 PrefabInstance:
   m_ObjectHideFlags: 0
