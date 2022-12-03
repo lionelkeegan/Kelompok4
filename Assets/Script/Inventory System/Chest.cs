@@ -22,6 +22,7 @@ public class Chest : MonoBehaviour, IInteractable
 
         if (isOpen)
         {
+
             isOpen = true;
             canvasGroup.alpha = 1;
             canvasGroup.blocksRaycasts = true;
@@ -31,6 +32,7 @@ public class Chest : MonoBehaviour, IInteractable
             isOpen = false;
             canvasGroup.blocksRaycasts = false;
             canvasGroup.alpha = 0;
+            
         }
     }
 
