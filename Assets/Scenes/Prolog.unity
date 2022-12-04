@@ -1439,7 +1439,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1085760875}
         m_TargetAssemblyTypeName: SceneLoaderManager, Assembly-CSharp
-        m_MethodName: ProgressLoad
+        m_MethodName: Load
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
