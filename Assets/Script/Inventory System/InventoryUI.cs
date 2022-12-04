@@ -45,7 +45,7 @@ public class InventoryUI : MonoBehaviour
             {
                 // parent dan posisi
                 item.gameObject.SetActive(true);
-                item.transform.SetParent(GetComponentInParent<Canvas>().transform);
+                item.transform.SetParent(GetComponentInParent<InventoryUI>().transform);
                 item.transform.position = slots[numOfSlots - emptySlots].position;
                 
                 // daftarkan menu
