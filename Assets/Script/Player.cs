@@ -8,7 +8,11 @@ public class Player : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField, Range(0,20)] float speed;
 
+    public HealthBar healthBar;
+    public float Health;
+    public float MaxHealth;
 
+    public int level;
 
     void Update()
     {
@@ -42,5 +46,13 @@ public class Player : MonoBehaviour
         }
 
         animator.SetBool("IsMoving", movDirection != Vector2.zero);
+    }
+
+    public void ChangeHealth(float amount)
+    {
+        Health += amount;
+        Health = Mathf.Clamp(Health,0,100);
+        //healthbar
+        healthBar.UpdateHealthBar(Health/MaxHealth);
     }
 }
